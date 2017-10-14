@@ -1,0 +1,165 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+%\documentclass{ctexart}
+\documentclass{article} % use larger type; default would be 10pt
+
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{amsmath}
+\usepackage{ctex}
+\usepackage{xeCJK} %调用 xeCJK 宏包
+\setCJKmainfont{SimSun} %设置 CJK 主字体为 SimSun （宋体）
+
+\usepackage{cjkindent}
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=0.5in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\renewcommand{\arraystretch}{1.5}
+%\setlength\parindent{44pt}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{预科实验五：测量薄透镜的焦距}
+\author{朱寅杰 1600017721 周五12组}
+\date{2017年9月22日} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\section{实验目的}
+\begin{itemize}
+\item
+感受光学仪器的调节方法。
+\item
+用位移法和自准直法测量凸透镜焦距。
+\item
+利用虚物成像，用物像距法和自准直法测量凹透镜焦距。
+\end{itemize}
+
+\section{实验数据}
+
+\subsection{用位移法测凸透镜焦距}
+\paragraph{}
+实验中直接测量的量有光具座上物屏的位置$x_1$、像屏的位置$x_2$，以及两次成像时透镜分别所处的位置$y_1$和$y_2$。计算出物屏与像屏之间的距离$A=\lvert x_2-x_1\rvert$和两次成像间透镜的位移$l=\lvert y_2-y_1\rvert$，从而可以得到透镜焦距$f=\frac{A^2-l^2}{4A}$。实验中多次测量，取计算所得的焦距$f$的平均值为最终结果以控制误差。
+\paragraph{}
+\indent
+粗测透镜焦距大约是十几厘米。
+\paragraph{}
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}r|c c c c|c c|c}
+
+\hline
+
+编号&$x_1$/cm&$x_2$/cm&$y_1$/cm&$y_2$/cm&$A$/cm&$l$/cm&$f$/cm\\
+\hline
+1&31.89&125.32&49.48&107.57&93.43&58.09&14.33\\
+2&31.89&105.98&51.56&86.88&74.09&35.12&14.36\\
+3&31.89&91.41&56.62&67.63&59.52&11.01&14.37\\
+\hline
+\end{tabular*}
+
+\paragraph{}
+测量所用光具座最小刻度为1mm，因此上表直接测量的数据中最后一位均为估读。三次测量所得的焦距相差很小，取平均值的话得到的结果是$f=14.35$cm。
+
+\subsection{用自准直法测凸透镜焦距}
+
+\paragraph{}
+使用自准直法重新测量上一节中的凸透镜的焦距。
+
+\paragraph{}
+实验中物屏位于31.89cm处，当自准直成像时凸透镜位于46.32cm处。二者相减得凸透镜的焦距为14.43cm。
+
+\subsection{用物距像距法，虚物成实像测量凹透镜焦距}
+
+\paragraph{}
+让物先经凸透镜成一个实像，记下这个像的位置$x_1$。然后撤去像屏，在这个像的前方放置一个凹透镜，使得刚才那个像落在凹透镜像方的一倍焦距以内。此时这个像作为虚物会经过凹透镜在凹透镜像方成一个实像。记录凹透镜的位置$x_2$和所成新的实像的位置$x_3$，计算出虚物的物距$p=x_2-x_1$（在像方，为负数）与实像的像距$p'=x_3-x_2$，利用$\frac{1}{p}+\frac{1}{p'}=\frac{1}{f}$求出凹透镜的焦距$f=\frac{p'p}{p'+p}$（为一负数）。
+
+\paragraph{}
+
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}r|c c c|c c|c}
+\hline
+编号&$x_1$/cm&$x_2$/cm&$x_3$/cm&$p$/cm&$p'$/cm&$f$/cm\\
+\hline
+1&103.42&94.28&114.52&-9.14&20.24&-16.67\\
+2&103.42&96.92&107.72&-6.50&10.80&-16.33\\
+3&103.42&95.52&112.77&-7.90&17.25&-14.57\\
+\hline
+\end{tabular*}
+
+\paragraph{}
+直接测量的数据的最后一位均为估读。将几次测得的焦距取平均值得$f=-15.86$cm。
+\subsection{自准直法测凹透镜焦距}
+\paragraph{}
+先用凸透镜成一个实像作为虚物。当这个虚物被位于凹透镜像方焦点时，会聚光线恰好变为平行光，经过平面镜反射后再经凹透镜和凸透镜折射，在原来物屏处成一个倒立等大虚像。
+
+\paragraph{}
+实验是测得虚物的位置在95.06cm处，自准直成像是凹透镜位于80.60cm处，二者相减即得凹透镜焦距为-14.46cm。
+
+\section{分析、讨论与杂感}
+%测量技巧讨论、误差分析、以及杂感。
+\paragraph{}
+先说说仪器调节部分。光具座上的共轴调节可以说是光学实验中类似的共轴调节里最简单的了，但其中许多基本逻辑和技巧还是共通的。比如有两个元件需要同时调节对准该怎么操作？在本次实验中，同时调节透镜和像屏中心与物屏中心对齐，指导老师所给的经验性建议是用位移法成像，“成大像时调节透镜高度，成小像时调节像屏高度”，如此反复数次。这其中是什么道理呢？
+\paragraph{}
+我的想法是这样。在这个例子中，定性地说，透镜的偏移和像屏的偏移对最终看到像的偏移的贡献是相互耦合叠加的，难以简单地去做分离变量\footnote{这个例子中也是有可以直接分离的变量的，比如透镜的横向偏移和上下偏移在调节时就是分离的两个变量。}。但是容易注意到，在成大像时，透镜离物屏较近，因而透镜光心偏移对像的偏移的贡献会比在成小像的时候大。这时候的调节可以看作是一个线性方程组的求解问题：
+\[
+\begin{cases}	
+a_1x+b_1y=c_1\\
+a_2x+b_2y=c_2
+\end{cases}
+\]
+其中$x$和$y$分别是透镜和像屏对物屏中心线的的偏移，$c_1$和$c_2$分别代表成大像和成小像时像对像屏中心的偏移。根据前述分析，系数满足
+\[
+\frac{a_1}{b_1}>\frac{a_2}{b_2}
+\]
+我们去调节的过程就等价于一个通过Gauss–Seidel迭代法来解这个线性方程组的过程。在数学上有定理保证\footnote{见Golub, Gene H.; Van Loan, Charles F. (1996), \textit{Matrix Computations (3rd ed.)}, Theorem 10.1.2.}，当线性方程组的系数矩阵正定时Gauss-Seidel迭代法收敛。可以说对角线上的元素相对较大对于收敛是有帮助的，因而就需要通过一个类似于支点选择的过程将这个矩阵中较大的元换到对角线上。这就是实验时“大像调透镜，小像调像屏”的道理。
+
+\paragraph{}
+在这次实验中，凸透镜焦距的测量较为顺利，位移法的几次实验计算得的焦距值都很接近，如果不考虑测量中的非随机误差的话这是一个令人相当满意的测量。同时位移法测定的焦距与自准直法读出的焦距也很接近，证明这个结果的误差应该至多在毫米量级。但是凹透镜的物像距法测得的数据就让人不太满意，第三组数据在测量时选用的参数明明夹在前两组中间，但却得出了与前两组相差甚大的结果。重新做了一次，测量读数与计算都没有发现问题，令人甚是不快。凹透镜在成像时景深都很大，成像时也不如凸透镜成像时那么锐利清晰（或许可以通过计算得出更加精巧的参数安排来避免这个问题？）。实验时只能就着透镜色差在像周围形成的彩色边缘猜测着哪里才是真正的成像位置。
+
+\paragraph{}
+做一个规定动作吧。似乎网上要求里希望我讲一讲自准直法和位移法的优缺点。自准直法可以直接读出焦距，非常方便，而位移法就相对来说麻烦一些。要论精确程度，自准直法没有什么可以改的参数，没法多次实验，而位移法就可以多次测取平均。加上位移法可以消除透镜中心在光具座上位置标的不准的系统误差，所以应该说位移法能做到更高的精度。
+\paragraph{}
+别的感受也不多说什么了。一个玩望远镜的高中同学曾劝导当时调不好光学仪器的我说，调节复杂光学仪器需要有调仪器的感觉。我并不能完全理解他说的是什么意思，但大概就是某种共通的经验吧，是需要慢慢摸索修炼的。透镜焦距的实验看似简单，但不失为后面更加难做的光学实验积累手感、技巧和经验的一个好的机会。也希望我在几周后调节迈克耳孙干涉仪时不会太手忙脚乱吧。
+
+\end{document}

@@ -1,0 +1,137 @@
+% !TEX TS-program = Xelatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{amsmath}
+\usepackage{xeCJK} %调用 xeCJK 宏包
+\setCJKmainfont{SimSun} %设置 CJK 主字体为 SimSun （宋体）
+\setlength{\parindent}{44pt}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=0.5in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{amsmath}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\renewcommand{\arraystretch}{1.5}
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{预科实验六：显微镜}
+\author{朱寅杰 1600017721 周五12组}
+\date{2017年9月22日} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\section{实验目的}
+\begin{itemize}
+\item
+将生物显微镜的目镜改装成测微目镜，用标准尺标定改装后物镜的放大倍数，并使用改装后的显微镜测量未知光栅甲的空间频率。
+\item
+使用读数显微镜测量未知光栅乙的空间频率。
+\end{itemize}
+
+\section{实验记录}
+
+\subsection{标定改装后显微镜的物镜放大倍数}
+\paragraph{}
+显微镜改装完成后，将标准尺放上载物台，使用测微目镜观察。标准尺一格为$y_1=0.1$mm，经过物镜系统放大后呈入视野。因此只需测量标准尺上若干格（作为标准长度）在视野中的实际长度，即可获知改装后物镜的放大倍数。
+\paragraph{}
+具体说来，在调节完毕后将目镜中叉丝对准标准尺上某一刻度，记录此时主尺与鼓轮读数$x_1$作为起始值。转动鼓轮至叉丝对准移至另某一刻度时记录此时主尺与鼓轮读数$x_2$作为终值。记这一过程中标准尺走过了$n$格，则可以求出标准尺上0.1mm在视野中实际看到是$y_1'=\frac{x_2-x_1}{n}$长。数据记录如下：
+\paragraph{}
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}r|c c c|c}
+\hline
+\#	&$n$	&$x_1$/mm	&$x_2$/mm	&$y_1'$/mm\\
+\hline
+1	&5	&0.742	&6.748	&1.201\\
+2	&4	&2.136	&6.729	&1.198\\
+3	&6	&0.958	&8.179	&1.203\\
+\hline
+\end{tabular*}
+\paragraph{}
+鼓轮上的最小刻度为0.01mm，读数时估读一位。为控制实验误差，取三次测量的平均值作为计算放大率所采取的数值：$y_1'=1.201mm$，放大率$\beta_0=y_1'/y_1=12.01$倍。
+\subsection{用改装后的显微镜测量光栅甲的空间频率}
+\paragraph{}
+测量方式与上节完全类似，只不过现在$n$变成了两次读数之间走过的光栅周期数。
+\paragraph{}
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}c|c c c|c}
+\hline
+序号	&$n$	&$x_1$/mm	&$x_2$/mm	&$y'=\frac{x_2-x_1}{n}$/mm\\
+\hline
+1	&10	&0.874	&6.896	&0.6022\\
+2	&10	&0.271	&6.281	&0.6010\\
+3	&13	&0.650	&8.472	&0.6017\\
+\hline
+\end{tabular*}
+\paragraph{}
+和上面一样小数点最后一位为估读。为控制误差，取三次测得的$y'$的平均值$y'=0.6016$mm。除以上一节标定的物镜放大率，知光栅常数实际值为$y=y'/\beta_0=5.009*10^{-5}$m，光栅的空间频率为$1/y=1.996\*10^{-4}$m$^{-1}$。
+\subsection{用读数显微镜测量光栅乙的空间频率}
+从读数显微镜鼓轮上读出的刻度直接对应于镜筒的左右位移，与放大系统无关。实验时将标志线对准某根条纹左端，记录此时鼓轮读数$x_1$作为初值。转动鼓轮使视野移过若干条纹，至标志线再次对准某根条纹为止，记录此时鼓轮读数$x_2$作为终值。记两次读数之间视野移过的光栅周期数为$n$，则光栅一周期的长度便等于$y=\frac{x_2-x_1}{n}$。
+\paragraph{}
+\begin{tabular*}{0.96\textwidth}{@{\extracolsep{\fill}}c|c c c|c c}
+\hline
+序号	&$n$	&$x_1$/mm	&$x_2$/mm	&$x_2-x_1$/mm	&$y=\frac{x_2-x_1}{n}/10^{-5}$m\\
+\hline
+1	&25	&37.627	&39.719	&2.092	&8.368\\
+2	&20	&35.628	&37.298	&1.670	&8.350\\
+3	&30	&32.876	&35.379	&2.503	&8.343\\
+\hline
+\end{tabular*}
+\paragraph{}
+表中的直接测量量的最后一位数字均为估读。为控制误差，取三次测得的光栅空间周期的平均值为最终测量结果：$y=8.354×10^{-5}$m，空间周期为$1/y=1.197×10^4$m$^{-1}$。
+
+\section{分析、讨论与杂谈}
+显微镜的调节与使用要领大家在高中生物课上都可以说是很熟悉了，但是把测微目镜改装上去还是第一次。许多问题在预习报告中虽然已经写过了，但在此还是再重申一下，以资备忘。
+\paragraph{}
+首先是改装显微镜的问题。物镜是非常精密的光学器件，镜头上所给的放大倍数一般是准确的，只要在配套的镜筒上使用，本来是十倍的放大率绝没有变成十二倍的道理。但是将原装目镜替换成测微目镜之后情况就不一样了，由于镜头的放大率也取决于显微镜的光学间隔（即物镜的像方焦点到目镜的物方焦点之间的距离），因此改装上测微目镜之后，由于新老两块目镜尺寸和焦距等参数上的差别，显微镜的光学间隔会发生改变，导致物镜的放大率发生变化。因此在改装之后必须重新标定物镜的放大率。
+\paragraph{}
+其次是鼓轮的空程差的问题。事实上在大部分的齿纹或是螺纹传动的元件上都普遍有空程差存在，而实验仪器中螺纹传动的又十分常见，因此这是一个在今后实验时需要谨记的事项。在用螺纹元件做测量时，只能朝一个方向转，不能中途往回倒，否则读到的数据将出现明显的系统误差。比如平时测量长度用的螺旋测微计即需要注意这个问题。
+\paragraph{}
+这次实验所得到的结果还是令我比较满意的，几组数据的随机误差都不大，前两个实验的不确定度甚至都只在估读的最后一位上。大概是显微镜这个实验确实比较好做吧。希望今后的实验也能做出这样好的结果。
+\paragraph{}
+最后是一点杂谈。实验的时候用的读数显微镜的放大倍数不高，拿来数光栅的时候视野里密密麻麻的，开始时本想不戴眼镜结果差点连标志线都找不到。数条纹的时候也是便默念着数字边数，所幸读到的数据表明我没有数错，因为即便只数错一格都会对算出的光栅周期产生很大的偏差使得与另外两组数据的结果明显不符。说来人数数虽然总是数到精确值，但一旦要数的数目太大还是保不准会出现“一两二三四”之类的事故的。但只要对每一个单位的大概数值有个把握，通过简单的计算比对还是很容易发现自己有没有数错的。这大概也是以后做类似实验的一个诀窍。
+\paragraph{}
+另外就是数条纹和估读刻度实在是一件非常伤眼睛的事情，两场实验做下来感觉眼睛已经极度疲劳，不知老师有没有什么使得看显微镜数条纹和估读刻度不那么伤眼睛的小诀窍呀。
+\end{document}
