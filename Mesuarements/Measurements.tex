@@ -3,6 +3,7 @@
 
 \documentclass[UTF8]{ctexart}
 \usepackage{amsmath}
+\usepackage[bottom]{footmisc}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{figsize}\usepackage[separate-uncertainty = true]{siunitx}
@@ -28,7 +29,7 @@
 \noindent
 \begin{tabu} to \linewidth {X[2]|X X X X X X|X[2] X[2]|X[2]}
 \hline
-待测量& 1&  2&  3&  4&  5&  6&  平均值$\bar{x}$&标准差$\sigma_{\bar{N}}$&不确定度$\sigma$ \\
+待测量& 1&  2&  3&  4&  5&  6&  平均值$\bar{x}$\footnotemark[1]&标准差$\sigma_{\bar{N}}$&不确定度$\sigma$ \\
 \hline
 外径$R$/cm&	2.800&	2.803&	2.805&	2.803&	2.804&	2.805&	2.803333333&	0.000760117&	0.002985148
 \\
@@ -40,6 +41,8 @@
 \\
 \hline
 \end{tabu}
+
+\footnotetext[1]{所有数据处理计算过程中的中间量为方便起见均保留至机器默认精度，在最终结果中才按照不确定度截取有效数字位数，后面的数据表与最小二乘法的中间算式中也采取同样的做法，还望老师谅解。}
 
 根据计算出的不确定度，确定各测量结果的有效数字位数。有
 \begin{gather}
@@ -56,7 +59,7 @@
 
 故而$V=\pi(R^2H-r^2h)/4=\SI{14.26(8)}{\cm^3}$。
 
-从数据表中可以看出，仪器允差对$R$、$r$、$H$的不确定度的贡献大于随机误差的贡献，而对$h$不确定度的贡献小于随机误差。
+从数据表中可以看出，仪器允差对$R$、$r$、$H$的不确定度的贡献$e/\sqrt{3}=\SI{0.0029}{\cm}$大于随机误差的贡献，而对$h$不确定度的贡献小于随机误差。实验时我也感到$h$比起另几个量确实难测一些，从此分析看实验对$h$的测量的质量也确实不如其他量。
 
 \subsection{钢珠体积的测量}
 使用螺旋测微器测量小钢珠的直径$d$，并计算其体积$V=\pi d^3/6$。所使用的螺旋测微器量程为\SI{25}{\mm}，零点位置在\SI{0.019}{\mm}处，鼓轮上最小刻度为\SI{0.01}{\mm}，读数时估读到\SI{0.001}{\mm}。仪器的极限误差取为$e=\SI{0.004}{\mm}$。和上一例一样测量六次，计算平均值与样本标准差，从而求出平均值的标准差，再与仪器的极限误差合成得到钢珠直径的不确定度。数据记录处理如下表。
@@ -66,13 +69,13 @@
 \hline
 & 1&  2&  3&  4&  5&  6&  平均值&标准差$\sigma_{\bar{N}}$&不确定度$\sigma$ \\
 \hline
-$d$/cm &12.728&12.729&12.73&12.729&12.727&12.728&12.7285&0.000428&0.002349\\
+$d$/cm &12.728&12.729&12.730&12.729&12.727&12.728&12.7285&0.000428&0.002349\\
 \hline
 \end{tabu}
 
 从计算出的不确定度确定$d$应取的有效位数，$d=\SI{12.729(2)}{\mm}$。考虑螺旋测微器零点的修正，有$d=\SI{12.710(2)}{\mm}$，从而计算出$V=\pi d^3/6$，并估计出$\sigma_V=(\partial V/\partial d)\sigma_d=\pi d^2 \sigma_d/2=\SI{0.596}{\mm^3}$。故而有$V=\pi d^3/6=\SI{1074.9(6)}{\mm^3}$。
 
-从数据表中可以看出，仪器允差对$d$的不确定度的贡献远大于随机误差的贡献，证明多次测量已经有效地减小了随机误差的影响。
+从数据表中可以看出，仪器允差对$d$的不确定度的贡献$e/\sqrt{3}=\SI{0.0023}{\mm}$远大于随机误差的贡献，证明多次测量已经有效地减小了随机误差的影响。
 
 \section{作业题}
 \subsection{}
@@ -82,21 +85,21 @@ $d$/cm &12.728&12.729&12.73&12.729&12.727&12.728&12.7285&0.000428&0.002349\\
 
 今已知$x=9.24, y=\exp{(-x^2)}$，故取$e_x=0.005$，有 $e_y=\lvert y'(x)e_x\rvert=2xye_x=\num{7.7e-39}$。故$y=\exp{(-x^2)}=\num{8.3e-38}$。
 
-今已知$x=56.7, y=\ln{x}$，故取$e_x=0.05$，有 $e_y=\lvert y'(x)e_x\rvert=e_x/x=\num{8.8e-4}$。故$y=\ln{x}=\num{4.037}$。
+今已知$x=56.7, y=\ln{x}$，故取$e_x=0.05$，有 $e_y=\lvert y'(x)e_x\rvert=e_x/x=\num{8.8e-4}$。故$y=\ln{x}=\num{4.038}$。
 
 今已知$x=\ang{9;24;}, y=\cos{x}$，故取$e_x=\ang{0;0;30}$，有 $e_y=\lvert y'(x)e_x\rvert=\sin{x}e_x=\num{2.4e-5}$。故$y=\cos{x}=\num{0.98657}$。
 \subsection{}
 已知$\rho=\rho_0m_1/(m_1-m_2)$，则$\sigma_{\rho}=\sqrt{(\sigma_{m_1}\partial\rho/\partial m_1)^2+(\sigma_{m_2}\partial\rho/\partial m_2)^2}=\rho_0\sqrt{(\sigma_{m_1}m_2)^2+(\sigma_{m_2}m_1)^2}/(m_1-m_2)^2$。
 
-已知$y=\ln{ab/(a+b)}$，则$\sigma_y=\sqrt{(\sigma_{a}\partial y/\partial a)^2+(\sigma_b\partial y/\partial b)^2}=\sqrt{(\sigma_a\ln{a})^2+(\sigma_b\ln{b})^2}/y$。
+已知$y=\ln{ab/(a+b)}$，则$\sigma_y=\sqrt{(\sigma_{a}\partial y/\partial a)^2+(\sigma_b\partial y/\partial b)^2}=\sqrt{(b\sigma_a/a)^2+(a\sigma_b/b)^2}/(a+b)$。
 \subsection{}
-为测出$L$有两种方案，一种是$L=L_1+d_1/2+d_2/2$，另一种是$L=L_2-d_1/2-d_2/2$。前一种$\sigma_L^2=\sigma_{L_1}^2+(\sigma_{d_1}^2+\sigma_{d_2}^2)/4$，后一种$\sigma_L^2=\sigma_ {L_2}^2+(\sigma_{d_1}^2+\sigma_{d_2}^2)/4$。由于$\sigma_{L_1}<\sigma_{L_2}$，故前一种测法更优。
+为测出$L$有三种方案，一种是$L=L_1+d_1/2+d_2/2$，一种是$L=L_2-d_1/2-d_2/2$，还有一种是$L=L_1/2+L_2/2$。第一种$\sigma_L^2=\sigma_{L_1}^2+(\sigma_{d_1}^2+\sigma_{d_2}^2)/4=\SI{0.825}{\micro\meter\squared}$，第二种$\sigma_L^2=\sigma_ {L_2}^2+(\sigma_{d_1}^2+\sigma_{d_2}^2)/4=\SI{1.185}{\micro\meter\squared}$，第三种$\sigma_L^2=\sigma_{L_1}^2/4+\sigma_{L_2}^2/4=\SI{0.41}{\micro\meter\squared}$。比较三种测法知第三种测法最优。
 \subsection{}
-对平板表面面积先作一估算，$A=L_1L_2-\pi(d_1^2+d_2^2)/4\doteq\SI{62.84}{\cm\squared}$，不确定度不超过0.5\%即要求$e_A\leq\SI{0.314}{\cm\squared}$。估算$e_L=L_2e_{L_1}+L_1+e_{L_2}+\pi d_1e_{d_1}/2+\pi d_2e_{d_2}/2=\SI{0.200}{\cm\squared}+\pi d_2e_{d_2}/2$，故这要求$e_{d_2}\leq\SI{0.91}{\cm}$，因此不必再对小孔再做测量，粗测已经足够满足精度的要求。
+对平板表面面积先作一估算，$A=L_1L_2-\pi(d_1^2+d_2^2)/4\doteq\SI{62.84}{\cm\squared}$，不确定度不超过0.5\%即要求$e_A\leq\SI{0.314}{\cm\squared}$。估算$e_L=L_2e_{L_1}+L_1e_{L_2}+\pi d_1e_{d_1}/2+\pi d_2e_{d_2}/2=\SI{0.200}{\cm\squared}+\pi d_2e_{d_2}/2$，故这要求$e_{d_2}\leq\SI{0.91}{\cm}$，因此不必再对小孔再做测量，粗测已经足够满足精度的要求。
 \subsection{}
 使用$g=2h/t^2$测重力加速度，其中$h$由于钢尺的热胀会偏小$\SI{1e-5}{K}\times\SI{10}{K}=\num{1e-4}$，而$t$由于停表慢了万分之一会偏小\num{1e-4}。将二者的影响叠加，最终测出的$g$会比真值偏大\num{1e-4}，即从\SI{980.00}{\cm\per\second\squared}变为\SI{980.01}{\cm\per\second\squared}。
 
-对于单摆的周期，如果考虑摆幅较大时的非线性项，那么为了使周期的准确度好于0.5\%，摆角不应超过\ang{5}；为了使周期的准确度好于0.05\%，摆角不应超过\ang{1.6}。
+对于单摆的周期，如果考虑摆幅较大时的非线性项，那么为了使周期的准确度好于0.5\%，摆角不应超过\ang{16}；为了使周期的准确度好于0.05\%，摆角不应超过\ang{5}。
 \subsection{测量空气中声速}
 测出相位相差$2\pi$的点的位置$y_i$，有$y_i=b_0+i\lambda, i=1,2,3...$。$y_i$的值如下表：
 
@@ -136,15 +139,15 @@ $t^{-2}/\SI{e-2}{\second^{-2}}$&0.535 &0.988 &1.424 &1.787 &2.169 &2.552 &2.932\
 对上表中的数据作线性回归分析。以$m$为自变量$x$，$1/t^2$为因变量$y$作最小二乘法，得到
 
 \begin{gather}
-  k_1= \frac{\overline{xy}-\bar{x}\bar{y}}{\bar{x^2}-\bar{x}^2}=(52.14214-1.76957\times25)/(725-25^2)=\SI{0.0790e-2}{\second^{-2}\gram^{-1}}\\
-  b_1= \bar{y}-k_1\bar{x}=1.76957-0.07903\times25=\SI{-0.206}{\per\second\squared}\\
+  k_2= \frac{\overline{xy}-\bar{x}\bar{y}}{\bar{x^2}-\bar{x}^2}=(52.14214-1.76957\times25)/(725-25^2)=\SI{0.079e-2}{\second^{-2}\gram^{-1}}\\
+  b_2= \bar{y}-k_2\bar{x}=1.76957-0.079\times25=\SI{-0.206e-2}{\per\second\squared}\\
   r=\frac{\overline{xy}-\bar{x}\bar{y}}{\sqrt{(\bar{x^2}-\bar{x}^2)(\bar{y^2}-\bar{y}^2)}}=\frac{52.142-1.76957\times25}{\sqrt{3.7568-1.7695^2}\sqrt{725-25^2}}=0.99933
 \end{gather}
 
 以$1/t^2$为自变量$y$，$m$为因变量$x$作最小二乘法，得到
 \begin{gather}
-  k_2= \frac{\overline{xy}-\bar{x}\bar{y}}{\bar{y^2}-\bar{y}^2}=(52.14214-1.76957\times25)/(725-25^2)=\SI{12.64e2}{\gram.\second^2}\\
-  b_2= \bar{x}-k_2\bar{y}=25-12.62669\times1.76957=\SI{2.64}{\gram}\\
+  k_1= \frac{\overline{xy}-\bar{x}\bar{y}}{\bar{y^2}-\bar{y}^2}=(52.14214-1.76957\times25)/(725-25^2)=\SI{12.6e2}{\gram.\second^2}\\
+  b_1= \bar{x}-k_1\bar{y}=25-12.62669\times1.76957=\SI{2.64}{\gram}\\
   r=\frac{\overline{xy}-\bar{x}\bar{y}}{\sqrt{(\bar{x^2}-\bar{x}^2)(\bar{y^2}-\bar{y}^2)}}=0.99933
 \end{gather}
 
