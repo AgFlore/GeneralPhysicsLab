@@ -1,0 +1,82 @@
+% !TEX TS-program = Xelatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{figsize}
+\usepackage[separate-uncertainty = true,per-mode=symbol]{siunitx}
+\usepackage{tabu}
+\usepackage{wasysym}
+\geometry{left=0.7in,right=0.7in,bottom=0.7in,top=0.7in}
+
+\title{实验十四：直流电桥测电阻}
+\author{朱寅杰 1600017721}
+\date{2017年11月10日}
+
+\begin{document}
+
+\maketitle
+
+\section{自组电桥测量未知电阻与电桥灵敏度}
+电源电压$E=\SI{4.030}{\volt}$。计算灵敏度$S=\frac{\Delta n}{\Delta R_x/R_x}=\frac{\Delta n}{\Delta R_0/R_0}$。电阻箱上标称对于\SI{10}{\ohm}以上各档有0.1\%的允差，对\SI{1}{\ohm}档有0.5\%的允差，对\SI{0.1}{\ohm}档有2\%的允差。检流计的内阻为\SI{47}{\ohm}，盘面上一格为\SI{1.3e-6}{\ampere}。
+\begin{center}
+\noindent
+\begin{tabu} to 0.99\linewidth {X[c,-10] X[c,-10]|X[c] X[c] X[c]|X[c] X[c]}
+\hline
+待测电阻	&$R_1/R_2$	&$R_0/\si{\ohm}$	&$\Delta R_0/\si{\ohm}$	&$\Delta n$	&$R^x/\si{\ohm}$	&灵敏度$S$
+\\
+\hline
+$R^x_1=\SI{48.0}{\ohm}$&	\SI{500.0}{\ohm}/\SI{500.0}{\ohm}&	48.3&	0.1&	4.4&	48.3	&\num{2.1e3}
+\\
+\hline
+$R^x_2=\SI{365.3}{\ohm}$&	\SI{50.0}{\ohm}/\SI{500.0}{\ohm}&	3661.5&	30&	4.9&	366	&\num{6.0e2}
+\\
+	&	\SI{500.0}{\ohm}/\SI{500.0}{\ohm}&	366.1&	1&	4.2&	366.1	&\num{1.5e3}
+\\
+	&	（交换$R_1$与$R_2$）&	366.2&	1&	4.2&	366.2	&\num{1.5e3}
+\\
+$R^x_3=\SI{3978}{\ohm}$&	\SI{500.0}{\ohm}/\SI{500.0}{\ohm}&	3988&	100&	7.7	&3988	&\num{2.1e3}
+\\
+\hline
+\end{tabu}
+\end{center}
+
+\section{了解影响直流电桥灵敏度的因素}
+\begin{center}
+\begin{tabu} to \linewidth {X[c,-10] X[c] X[c]|X[c] X[c] X[c]|X[c] X[c]}
+\hline
+电源电压$E/\si{\volt}$	&$R_1/R_2$	&$R_h/\si{\ohm}$	&$R_0/\si{\ohm}$	&$\Delta R_0/\si{\ohm}$	&$\Delta n$	&$R^x_2/\si{\ohm}$	&灵敏度$S$
+\\
+\hline
+4.030	&500\si{\ohm}/500\si{\ohm}	&0	&366.2	&1	&4.1	&366.2	&\num{1.5e3}
+\\
+4.030	&500\si{\ohm}/5000\si{\ohm}	&0	&3663.0	&100	&8.0	&3663	&\num{3.2e2}
+\\
+4.030	&500\si{\ohm}/500\si{\ohm}	&2993	&366.2	&10	&5.2	&366.2	&\num{1.9e2}
+\\
+2.003	&500\si{\ohm}/500\si{\ohm}	&0	&366.2	&3	&6.2	&366.2	&\num{7.6e2}
+\\
+\hline
+\end{tabu}
+\end{center}
+\section{思考题}
+如果电源电压大幅下降，则会降低电桥的灵敏度，增大测量的误差。但如果只是电源电压稍有波动，则不会对测量造成什么影响。
+
+如果测量的电阻小到了导线电阻不可忽略的地步，那么由于导线的电阻会被计入电桥臂上的电阻中，因此会产生一定的误差。
+
+检流计的灵敏度是直接决定电阻测量的精确度的，如果灵敏度不够高势必会对精确度造成影响。如果检流计的零点没有调准，那实际测量时读的零点就并不是真正电桥平衡的零点。如果零点实在调不准，那就只能采取交换检流计正负接线测两次取平均的做法，来消除电桥零点不准所造成的系统误差。
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 
