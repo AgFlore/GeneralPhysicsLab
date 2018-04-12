@@ -1,0 +1,50 @@
+% !TEX TS-program = Xelatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{figsize}
+\usepackage[separate-uncertainty = true,per-mode=symbol]{siunitx}
+\usepackage{tabu}
+\usepackage{wasysym}
+\geometry{left=0.6in,right=0.6in,bottom=0.6in,top=0.6in}
+
+\title{实验三十六：光的时间相干性}
+\author{朱寅杰 1600017721}
+\date{2018年3月23日}
+
+\begin{document}
+\maketitle
+\setcounter{section}{36}
+\subsection{各种光源的相干长度的估测}
+在迈克耳孙干涉仪上，调出白光（台灯）的等厚干涉。观察到从中心条纹数，只有一条条纹是白色的，其余的均为彩色条纹。白光波长按照\SI{550}{\nm}估算的话，相干长度就只有约$\Delta L_{max}=\SI{550}{\nm}$的量级，相干时间$\Delta L_{max}/c=\SI{2e-15}{\s}$。
+
+如果给台灯加上橙色的滤光片再做等厚干涉，肉眼能分辨出的条纹总数有54条，相当于一边27级。橙光波长按照\SI{625}{\nm}估算，相干长度能有$\Delta L_{max}=\SI{16.9}{\micro\meter}$，相干时间$\Delta L_{max}/c=\SI{5.64e-14}{\s}$。如果换上黄色的滤光片，肉眼能分辨出的条纹总数有108条，相当于一边有54级。黄光波长按照\SI{578}{\nm}估算，相干长度$\Delta L_{max}=\SI{31.2}{\micro\meter}$，相干时间为$\Delta L_{max}=\SI{1.04e-13}{\s}$
+
+如果给汞灯加上黄色的滤光片再做等倾干涉，移动$M_1$镜，从\SI{20.902}{\mm}到\SI{44.583}{\nm}一直都能看到等倾条纹，于是估算汞黄光的相干长度$\Delta L_{max}=\SI{44.583}{\mm}-\SI{20.902}{\mm}=\SI{23.681}{\mm}$，相干时间为$\Delta L_{max}/c=\SI{7.8991e-11}{\s}$。
+
+\subsection{汞灯黄色双线的波长差的测量}
+调出汞灯（加黄色滤光片）的等倾干涉，在等光程附近可以观察出条纹可见度随$M_1$镜位置的周期性变化。记录下连续七个可见度最弱的点：
+\begin{center}
+\begin{tabu}{X[c]|X[c]X[c]X[c]X[c]X[c]X[c]X[c]}
+\hline
+\#	&1&2&3&4&5&6&7\\
+\hline
+位置/mm	&33.974	&33.897	&33.817	&33.738	&33.654	&33.576	&33.498\\
+\hline
+\end{tabu}
+\end{center}
+做一个最小二乘即可得到相邻两个可见度极弱的点的距离为$\Delta d=\SI{.07975(33)}{\mm}$，相关系数为\num{.99996}。于是用书上的公式（36.4）得到双线波长差为$\Delta\lambda=\frac{\lambda^2}{2\Delta d}=\SI{2.09(1)}{\nm}$。
+
+计数两个可见度极弱点之间光强峰谷数目，得有$\Delta k=272$个峰出现，于是知双线波长差为$\Delta\lambda=\lambda/\Delta k=\SI{2.12}{\nm}$。
+
+\subsection{杂谈}
+上文中所有不确定度基本都不作数，因为并不知道干涉仪的轮子的精度有多少。
+
+干涉仪手轮的空程差太过巨大，对于实验的效率造成了极大的影响。不知道现在市面上有没有卖空程差较小的干涉仪呀。
+\end{document} 
